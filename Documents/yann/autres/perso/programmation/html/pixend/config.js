@@ -26,14 +26,16 @@ function getServerConfig() {
         config.apiUrl = localUrl + '/api';
         console.log('Mode LOCAL detecte');
     } else if (window.location.hostname.includes('netlify')) {
-        const productionServerUrl = 'https://pixend-server.render.com'; // Modifier ici si besoin
+        const productionServerUrl = 'https://pixend-server.onrender.com';
         config.serverUrl = queryOverride || productionServerUrl;
         config.apiUrl = config.serverUrl + '/api';
+
         console.log('Mode NETLIFY detecte -> Serveur:', config.serverUrl);
     } else {
-        const productionServerUrl = 'https://pixend-server.render.com'; // Modifier ici si besoin
+        const productionServerUrl = 'https://pixend-server.onrender.com';
         config.serverUrl = queryOverride || productionServerUrl;
         config.apiUrl = config.serverUrl + '/api';
+
         console.log('Mode CUSTOM DOMAIN -> Serveur:', config.serverUrl);
     }
 
